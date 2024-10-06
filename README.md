@@ -2,7 +2,9 @@
 
 ## 项目简介
 
-本项目是一个使用 **Spring Boot** 和 **JPA (Java Persistence API)** 实现的简单增删查改（CRUD）操作的演示应用。通过该项目，你可以了解如何通过 API 操作 MySQL 数据库中的数据，并实现常见的用户管理操作。
+本项目是一个使用 **Spring Boot** 和 **JPA (Java Persistence API)** 实现的简单增删查改（CRUD）操作的演示应用，包含完整测试代码。通过该项目，你可以了解如何通过 API 操作 MySQL 数据库中的数据，并实现常见的用户管理操作。
+
+代码介绍：http://106.54.35.144/archives/mybatis-data-jpa
 
 ## 功能说明
 
@@ -155,6 +157,25 @@ CREATE TABLE IF NOT EXISTS tb_user
    - `entity/`：JPA 实体类，用于定义数据库表结构。
    - `dao/`：数据访问层，包含 JPA 接口，用于对数据库进行操作。
    - `service/`：业务逻辑层。
+
+## 测试代码示例
+- 以findById为例：
+```java
+    @Test
+    public void contextLoads() {
+        UserInfo user = userService.findById(1);
+
+        if (user != null){
+            System.out.println("用户编号：" + user.getUserId());
+            System.out.println("用户姓名：" + user.getUserName());
+            System.out.println("博客地址：" + user.getBlogUrl());
+            System.out.println("备注信息：" + user.getRemark());
+        }
+    }
+```
+- 测试成功
+![img_5.png](img_5.png)
+
 
 ## 扩展功能
 
