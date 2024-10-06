@@ -83,17 +83,19 @@ mvn spring-boot:run
 #### 1. 添加用户
 - **URL**: `/users`
 - **Method**: `POST`
-- **Request Body**:
-    ```json
+  - **Request Body**:
+  ```json
     {
-      "userName": "ruiling的jpa学习03",
+      "userName": "John",
       "age": 30,
       "sex": "Male",
-      "blogUrl": "http://ruiling.online/archives/mybatis-data-jpa",
+      "blogUrl": "https://example.com",
       "remark": "Test user"
     }
-    ```
+  ```
+  ![img_2.png](img_2.png)
 - **Response**: 成功创建用户后，返回用户详细信息。
+- ![img_3.png](img_3.png)
 
 #### 2. 查询用户
 - **URL**: `/users/{id}`
@@ -105,6 +107,7 @@ mvn spring-boot:run
 - **URL**: `/users`
 - **Method**: `GET`
 - **Response**: 返回所有用户的列表。
+- ![img_4.png](img_4.png)
 
 #### 4. 更新用户
 - **URL**: `/users/{id}`
@@ -119,7 +122,9 @@ mvn spring-boot:run
       "remark": "Updated user"
     }
     ```
+  ![img_1.png](img_1.png)
 - **Response**: 返回更新后的用户信息。
+- ![img.png](img.png)
 
 #### 5. 删除用户
 - **URL**: `/users/{id}`
